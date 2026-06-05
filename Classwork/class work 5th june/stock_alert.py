@@ -1,96 +1,74 @@
-# Store all transactions in a list
-# Positive values are deposits and negative values are withdrawals
-transactions = [5000, -2000, 3000, -1000, -500, 7000]
+# List containing stock quantity of products
+# Each position in the list represents a product
+stock = [25, 5, 0, 12, 3, 18, 0, 30]
 
-# -----------------------------
-# 1. Calculate Current Balance
-# -----------------------------
+# -----------------------------------------
+# 1. Display Products that are Out of Stock
+# -----------------------------------------
 
-# Start balance from 0
-balance = 0
+print("Products that are Out of Stock:")
 
-# Add each transaction to the balance
-for amount in transactions:
-    balance = balance + amount
+# Check every product in the list
+for i in range(len(stock)):
 
-# Display the final balance
-print("Current Balance =", balance)
+    # If stock quantity is 0, product is out of stock
+    if stock[i] == 0:
 
-
-# --------------------------------------
-# 2. Count Deposits and Withdrawals
-# --------------------------------------
-
-# Variables to store the count
-deposit_count = 0
-withdrawal_count = 0
-
-# Check each transaction
-for amount in transactions:
-
-    # If amount is positive, it is a deposit
-    if amount > 0:
-        deposit_count += 1
-
-    # If amount is negative, it is a withdrawal
-    else:
-        withdrawal_count += 1
-
-# Display total number of deposits and withdrawals
-print("Total Deposits =", deposit_count)
-print("Total Withdrawals =", withdrawal_count)
-
-
-# ------------------------------------------------
-# 3. Create Separate Lists for Deposits and Withdrawals
-# ------------------------------------------------
-
-# Empty lists to store deposits and withdrawals
-deposits = []
-withdrawals = []
-
-# Separate transactions into two lists
-for amount in transactions:
-
-    # Add positive amounts to deposits list
-    if amount > 0:
-        deposits.append(amount)
-
-    # Add negative amounts to withdrawals list
-    else:
-        withdrawals.append(amount)
-
-# Display both lists
-print("Deposits List =", deposits)
-print("Withdrawals List =", withdrawals)
+        # Product number starts from 1
+        print("Product", i + 1)
 
 
 # -----------------------------------------
-# 4. Find Largest Deposit
+# 2. Display Products that Need Restocking
+#    (Quantity less than 10)
 # -----------------------------------------
 
-# Assume the first deposit is the largest
-largest_deposit = deposits[0]
+print("\nProducts that Need Restocking:")
 
-# Compare all deposits one by one
-for amount in deposits:
-    if amount > largest_deposit:
-        largest_deposit = amount
+# Traverse the stock list
+for i in range(len(stock)):
 
-print("Largest Deposit =", largest_deposit)
+    # Check if quantity is less than 10
+    if stock[i] < 10:
+
+        # Display product number and quantity
+        print("Product", i + 1, "- Stock =", stock[i])
 
 
 # -----------------------------------------
-# 5. Find Largest Withdrawal
+# 3. Count Available Products
 # -----------------------------------------
 
-# Assume the first withdrawal is the largest withdrawal
-largest_withdrawal = withdrawals[0]
+# Variable to count available products
+available_products = 0
 
-# Compare all withdrawals
-# The most negative value represents the largest withdrawal
-for amount in withdrawals:
-    if amount < largest_withdrawal:
-        largest_withdrawal = amount
+# Check every product
+for quantity in stock:
 
-print("Largest Withdrawal =", largest_withdrawal)
+    # Product is available if quantity is greater than 0
+    if quantity > 0:
+        available_products += 1
+
+# Display total available products
+print("\nAvailable Products =", available_products)
+
+
+# -----------------------------------------
+# 4. Create a New List of Products
+#    Having Stock >= 15
+# -----------------------------------------
+
+# Empty list to store products with stock >= 15
+high_stock_products = []
+
+# Traverse the stock list
+for quantity in stock:
+
+    # Check if stock is 15 or more
+    if quantity >= 15:
+
+        # Add quantity to new list
+        high_stock_products.append(quantity)
+
+# Display the new list
+print("Products with Stock >= 15 =", high_stock_products)
