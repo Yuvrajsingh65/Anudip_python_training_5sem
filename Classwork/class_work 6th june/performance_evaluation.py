@@ -49,10 +49,7 @@ for emp in employees:
     if emp[2] >= 80:
         print(emp)
 
-# ---------------------------------------------------
-# 2. Count employees who need improvement
-#    (score less than 60)
-# ---------------------------------------------------
+# 2. Count employees who need improvement(score less than 60)
 
 count = 0   # Variable to store number of employees
 
