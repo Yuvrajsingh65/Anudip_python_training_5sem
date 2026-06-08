@@ -1,5 +1,5 @@
 # Cricket Tournament Statistics 
-# Problem Statement 
+# Problem Statements 
 # Runs scored by players in a tournament: 
 # runs = { 
 #     "Virat": 645, 
