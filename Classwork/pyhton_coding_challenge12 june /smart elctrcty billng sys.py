@@ -1,6 +1,6 @@
 '''
 Problem 1: Smart Electricity Billing System 
-Problem Statement 
+Problem Statement
 Monthly electricity consumption (units) of different houses in a residential society is stored as follows: 
 Sample Data 
 units = { 
